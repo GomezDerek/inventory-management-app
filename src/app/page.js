@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Box, Stack, Typography, Button, Modal, TextField } from '@mui/material'
+import firebase from 'firebase/app';
 import { firestore } from '@/firebase'
 import {
   collection,
