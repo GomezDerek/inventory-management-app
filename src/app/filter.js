@@ -129,7 +129,7 @@ export default function InventoryFilter(props) {
         onClick={()=>{
             // props.states.setFilteredInv(value);
             // console.log(`${props.states.displayInv.toString()}`);
-            // props.states.setDisplayInv(value);
+            props.states.setDisplayInv([value]);
             // console.log(props.states.displayInv);
             props.states.setFilterOn('true');
         }}
