@@ -12,13 +12,13 @@ import {
   deleteDoc,
   getDoc,
 } from 'firebase/firestore'
-import { Button, Stack } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 
 const filter = createFilterOptions();
 
 export default function InventoryFilter(props) {
   const [value, setValue] = React.useState(null);
-
+  console.log(props);
   return (
     <Stack
         display={'flex'}
@@ -131,10 +131,40 @@ export default function InventoryFilter(props) {
             // console.log(`${props.states.displayInv.toString()}`);
             props.states.setDisplayInv([value]);
             // console.log(props.states.displayInv);
-            props.states.setFilterOn('true');
+            props.states.setFilterOn(true);
         }}
     >
         Search
+    </Button>
+    {/* <Typography
+      variant="body1"
+      color={props.theme.typSecondary}
+      ml={1.5}
+      sx={{
+        alignSelf: 'center', 
+      }}
+    >
+      clear
+    </Typography> */}
+    <Button
+      variant="text"
+      size="small"
+      // color="secondary"
+      // color={props.theme.typSecondary}
+      sx={{
+        ml: 2,
+        fontSize: "0.7em",
+        pt: 0,
+        color: '#BBB',
+        visibility: props.states.filterOn ? "visible" : "hidden"
+      }}
+      onClick={()=>{
+        props.states.setFilterOn(false); 
+        props.states.setDisplayInv(props.states.inventory);
+        setValue('');
+      }}
+    >
+      clear
     </Button>
     </Stack>
   );

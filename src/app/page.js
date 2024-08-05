@@ -185,7 +185,10 @@ export default function Home() {
             justifyContent={'center'}
             py={2}
           >
-            <InventoryFilter states={{filteredInv, setFilteredInv: (x)=>setFilteredInv(x), inventory, setInventory: (x)=>setInventory(x), setFilterOn: (x)=>setFilterOn(x), displayInv, setDisplayInv: (x)=>setDisplayInv(x)}}/>
+            <InventoryFilter 
+                states={{filteredInv, setFilteredInv: (x)=>setFilteredInv(x), inventory, setInventory: (x)=>setInventory(x), filterOn, setFilterOn: (x)=>setFilterOn(x), displayInv, setDisplayInv: (x)=>setDisplayInv(x)}}
+                theme={{typSecondary: 'text.secondary'}}
+            />
           </Box>
 
           {/* inventory items container*/}
