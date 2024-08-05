@@ -159,10 +159,6 @@ export default function Home() {
           Add New Item
         </Button> 
 
-        <Button variant="contained" onClick={()=>console.log(inventory)}>
-          Log inventory
-        </Button>
-
         {/* inventory container*/}
         <Box border={'1px solid #333'}>
 
